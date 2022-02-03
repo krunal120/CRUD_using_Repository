@@ -17,7 +17,7 @@ namespace CRUD_using_Repository.Models
     {
         public int Id { get; set; }
         [Required(ErrorMessage ="Please Enter First Name")]
-        [Display(Name ="Fisrst Name")]
+        [Display(Name ="First Name")]
         public string FirstName { get; set; }
         [Required(ErrorMessage ="Please Enter Last Name")]
         [Display(Name ="Last Name")]
