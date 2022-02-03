@@ -1,0 +1,68 @@
+﻿@model CRUD_using_Repository.Models.Employee
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="card" style="width:60%; margin:auto;">
+    <div class="card-header bg-dark text-white">
+        <h5>Create New</h5>
+    </div>
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FirstName)
+                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.FirstName)
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.LastName)
+                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.LastName)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Age)
+                        @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Age)
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Position)
+                        @Html.TextBoxFor(m => m.Position, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Position)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Office)
+                        @Html.TextBoxFor(m => m.Office, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Office)
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Salary)
+                        @Html.TextBoxFor(m => m.Salary, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Salary)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        }
+    </div>
+</div>
