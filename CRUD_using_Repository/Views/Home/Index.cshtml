@@ -1,11 +1,12 @@
-﻿@model IEnumerable<CRUD_using_Repository.Models.Employee>  
-    @{ 
-        ViewBag.Title = "Index";
-    }
-<h3 class ="text-center text-uppercase ">List Of Employee</h3>
+﻿@model IEnumerable<CRUD_using_Repository.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+<h3 class="text-center text-uppercase ">List Of Employee</h3>
 <p>
-    @Html.ActionLink("Create New", "Create", "", new {@class = "btn btn-primary"})
+    @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-primary" })
 </p>
+<input type="search" id="myInput" class="form-control" placeholder="Search..."/>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -18,23 +19,23 @@
             <th>Action(s)</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="myTable">
         @foreach (var emp in Model)
-            {
-                <tr>
-                    <td>@emp.FirstName</td>
-                    <td>@emp.LastName</td>
-                    <td>@emp.Age</td>
-                    <td>@emp.Position</td>
-                    <td>@emp.Office </td>
-                    <td>@emp.Salary</td>
-                    <td>
-                        @Html.ActionLink("Details","Details",new { id = emp.Id }, new {@class="btn btn-info"}) 
-                        @Html.ActionLink("Edit", "Edit", new {id = emp.Id }, new {@class="btn btn-primary"})
-                        @Html.ActionLink("Delete","Delete",new {id = emp.Id}, new {@class="btn btn-danger"}) 
-                    </td>
-                </tr>
-            }
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => emp.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => emp.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => emp.Age)</td>
+                <td>@Html.DisplayFor(modelItem => emp.Position)</td>
+                <td>@Html.DisplayFor(modelItem => emp.Office) </td>
+                <td>@Html.DisplayFor(modelItem => emp.Salary)</td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = emp.Id }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Edit", "Edit", new { id = emp.Id }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Delete", "Delete", new { id = emp.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
